@@ -17,8 +17,6 @@ class Solution {
     int sum = Integer.MIN_VALUE;
     public TreeNode convertBST(TreeNode root) {
         if (root == null) return root;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
         convertBST(root.right);
         if (sum==Integer.MIN_VALUE){
             sum = root.val;
@@ -26,7 +24,6 @@ class Solution {
             sum = sum + root.val;
             root.val = sum;
         }
-        // System.out.print(root.val + " ");
         convertBST(root.left);
 
         return root;   

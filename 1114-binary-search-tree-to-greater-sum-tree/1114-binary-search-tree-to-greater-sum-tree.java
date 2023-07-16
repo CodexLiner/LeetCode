@@ -26,7 +26,7 @@ class Solution {
             sum = sum + root.val;
             root.val = sum;
         }
-        System.out.print(root.val + " ");
+        // System.out.print(root.val + " ");
         bstToGst(root.left);
 
         return root;

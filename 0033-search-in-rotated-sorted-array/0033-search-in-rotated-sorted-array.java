@@ -7,7 +7,6 @@ class Solution {
             
             int mid = (start + end) / 2;
             if (nums[mid] == target) {
-                System.out.println(mid);
                 return mid;
             }
             if (nums[start] <= nums[mid]) {

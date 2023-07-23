@@ -1,6 +1,5 @@
 class Solution {
     public static String sortVowels(String s) {
-        ArrayList<Character> characters = new ArrayList<>();
         char[] chars = s.toCharArray();
         ArrayList<Character> vw = new ArrayList<>();
         for (int i = 0; i < chars.length; i++) {
@@ -15,26 +14,10 @@ class Solution {
                 chars[i] = vw.get(x++);
             }
         }
-
-        int start = 0;
-        int end = 1;
         return new String(chars);
     }
 
     private static boolean isVowel(char a) {
-
-        // ArrayList<Character> list = new ArrayList<>();
-        // list.add('a');
-        // list.add('e');
-        // list.add('i');
-        // list.add('o');
-        // list.add('u');
-        // list.add('A');
-        // list.add('E');
-        // list.add('I');
-        // list.add('O');
-        // list.add('U');
-        // return list.contains(o);
          return a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' || a == 'A' || a == 'E' || a == 'I' || a == 'O' || a == 'U';
     }
 }

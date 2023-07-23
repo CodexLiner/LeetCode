@@ -21,19 +21,20 @@ class Solution {
         return new String(chars);
     }
 
-    private static boolean isVowel(char o) {
+    private static boolean isVowel(char a) {
 
-        ArrayList<Character> list = new ArrayList<>();
-        list.add('a');
-        list.add('e');
-        list.add('i');
-        list.add('o');
-        list.add('u');
-        list.add('A');
-        list.add('E');
-        list.add('I');
-        list.add('O');
-        list.add('U');
-        return list.contains(o);
+        // ArrayList<Character> list = new ArrayList<>();
+        // list.add('a');
+        // list.add('e');
+        // list.add('i');
+        // list.add('o');
+        // list.add('u');
+        // list.add('A');
+        // list.add('E');
+        // list.add('I');
+        // list.add('O');
+        // list.add('U');
+        // return list.contains(o);
+         return a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' || a == 'A' || a == 'E' || a == 'I' || a == 'O' || a == 'U';
     }
 }

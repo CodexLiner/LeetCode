@@ -1,29 +1,33 @@
 class Solution {
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int n1 = nums1.length;
-        int n2 = nums2.length;
-        int n = n1 + n2;
-        int[] new_arr = new int[n];
+   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-        int i=0, j=0, k=0;
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        int[] A = new int[nums1.length + nums2.length];
 
-        while (i<=n1 && j<=n2) {
-            if (i == n1) {
-                while(j<n2) new_arr[k++] = nums2[j++];
-                break;
-            } else if (j == n2) {
-                while (i<n1) new_arr[k++] = nums1[i++];
-                break;
-            }
-
+        while (i < nums1.length && j < nums2.length) {
             if (nums1[i] < nums2[j]) {
-                new_arr[k++] = nums1[i++];
-            } else {
-                new_arr[k++] = nums2[j++];
+                A[k++] = nums1[i++];
+            } else A[k++] = nums2[j++];
+        }
+        if (i < nums1.length) {
+            while (i < nums1.length) {
+                A[k++] = nums1[i++];
             }
         }
+        if (j < nums2.length) {
+            while (j < nums2.length) {
+                A[k++] = nums2[j++];
+            }
+        }
+        System.out.println(Arrays.toString(A));
 
-        if (n%2==0) return (float)(new_arr[n/2-1] + new_arr[n/2])/2;
-        else return new_arr[n/2];
+        if (A.length % 2 != 0) {
+            return A[A.length / 2];
+        } else {
+                        return (double) (A[A.length / 2] + A[A.length / 2 - 1]) / 2;
+        }
+
     }
 }

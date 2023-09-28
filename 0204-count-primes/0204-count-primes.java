@@ -1,11 +1,9 @@
 class Solution {
-    private int count;
-    private int[] primes;
-    
+   
     public int countPrimes(int n) {
         if (n<3) return 0;
-        primes=new int[n];
-        count=0;
+        int[] primes = new int[n];;
+        int count=0;
 
         primes[0]=1;
         primes[1]=1;

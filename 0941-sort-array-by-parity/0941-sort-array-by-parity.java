@@ -1,7 +1,6 @@
 class Solution {
     public static int[] sortArrayByParity(int[] nums) {
         int oddCount = 0;
-        Arrays.sort(nums);
         for (int i : nums) {
             if (i % 2 != 0) oddCount++;
         }
@@ -13,7 +12,7 @@ class Solution {
             if (i % 2 != 0) odds[oddIndex++] = i;
             else evens[evenIndex++] = i;
         }
-        Arrays.sort(odds);
+        // Arrays.sort(odds);
         int i = 0;
         for (; i < evens.length; i++) {
             nums[i] = evens[i];

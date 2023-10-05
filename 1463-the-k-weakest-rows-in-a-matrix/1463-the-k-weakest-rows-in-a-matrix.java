@@ -2,18 +2,9 @@ class Solution {
     static class pair {
         int freq;
         int index;
-
         public pair(int freq, int index) {
             this.freq = freq;
             this.index = index;
-        }
-
-        @Override
-        public String toString() {
-            return "pair{" +
-                    "freq=" + freq +
-                    ", index=" + index +
-                    '}';
         }
     }
 
@@ -28,7 +19,6 @@ class Solution {
                 }
             }
             arr[i] = new pair(freq, i);
-            System.out.println();
         }
         Arrays.sort(arr, (a, b) -> a.freq - b.freq);
         int[] ans = new int[k];
